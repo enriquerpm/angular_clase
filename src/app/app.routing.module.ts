@@ -1,23 +1,43 @@
-import {NgModule, NgModule} from "@angular/core";
-import { RouterModule ,Routes } from '@angular/router';
-import {SigninComponent} from './modules/login/signin/signin.component';
-import {ProductsComponent} from './modules/admin/products/products.component';
-import { ProductoService } from './modules/admin/services/product.service';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from '@angular/router';
+import { SigninComponent } from './modules/login/signin/signin.component';
+import { ProductsComponent } from './modules/admin/products/products.component';
+import { ProductNewComponent } from './modules/admin/product-new/product-new.component';
+import { ProductEditComponent } from './modules/admin/product-edit/product-edit.component';
 
-const routes:Routes = 
-[   {    path:'login',
-         component:SigninComponent
+const routes: Routes = [
+    {
+        path: 'login',
+        component: SigninComponent
     },
-    {    path:'admin',
-        component:ProductsComponent
+    {
+        path: 'admin',
+        component: ProductsComponent
     },
-    {   path:'',
-        redirectTo:'login'
+    {
+        path: 'admin/products/new',
+        component: ProductNewComponent
     },
-    {   path:'**',
-        redirectTo:'admin'
+    {
+        path: 'admin/products/:id',
+        component: ProductEditComponent
+    },
+    {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+    },
+    {
+        path: '**',
+        redirectTo: 'admin'
     }
- ];
+];
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule {}
 
 
 
