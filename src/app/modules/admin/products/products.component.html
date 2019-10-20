@@ -1,0 +1,20 @@
+<table  class="table is-striped is-hoverable is-bordered" >
+    <thead>
+        <tr>
+                <th  *ngFor="let titulo of titulos" > {{titulo | titlecase }} </th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr  *ngFor="let product of products" >
+                    <td>{{product.id}}     </td>
+                    <td>{{product.name}}   </td>
+                    <td>{{product.detail}} </td>
+                    <td>{{product.price | currency:"S./ "  }}        </td>
+                    <td>{{product.stock}}  </td>
+                    <td><button class="button is-danger is-light"  (click)="retirar_producto(product.id);"  >Eliminar</button>
+                    </td>
+                </tr>
+         
+
+    </tbody>
+</table>
