@@ -11,7 +11,12 @@
                     <td>{{product.detail}} </td>
                     <td>{{product.price | currency:"S./ "  }}        </td>
                     <td>{{product.stock}}  </td>
-                    <td><button class="button is-danger is-light"  (click)="retirar_producto(product.id);"  >Eliminar</button>
+                    <td>
+                            <a style="margin-right: 10px;" [routerLink]="['./products', product.id]" class="button is-small is-info">Editar</a>
+                        <button class="button is-danger is-light"  (click)="retirar_producto(product.id);"  >Eliminar</button>
+
+                    
+
                     </td>
                 </tr>
          
