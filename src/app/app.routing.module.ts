@@ -6,16 +6,13 @@ import { ProductNewComponent } from './modules/admin/product-new/product-new.com
 import { ProductEditComponent } from './modules/admin/product-edit/product-edit.component';
 
 const routes: Routes = [
-    {
-        path: 'login',
-        component: SigninComponent
+    {   path: 'login',
+        loadChildren:() => import('./modules/login/login.module').then(m=>m.LoginModule)
     },
-    {
-        path: 'admin',
-        component: ProductsComponent
+    {   path: 'admin',
+        loadChildren:() => import('./modules/admin/admin.module').then(m=>m.AdminModule)
     },
-    {
-        path: 'admin/products/new',
+    {   path: 'admin/products/new',
         component: ProductNewComponent
     },
     {

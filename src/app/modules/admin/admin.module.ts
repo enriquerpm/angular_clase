@@ -8,9 +8,10 @@ import { ProductoService } from './services/product.service';
 import { ProductNewComponent } from './product-new/product-new.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { RouterModule } from '@angular/router';
+import { AdminComponent } from './admin.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent ,ProductsComponent, ProductNewComponent, ProductEditComponent] ,
+  declarations: [HeaderComponent, FooterComponent ,ProductsComponent, ProductNewComponent, ProductEditComponent, AdminComponent] ,
   imports: [
     CommonModule
     ,RouterModule
