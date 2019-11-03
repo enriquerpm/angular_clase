@@ -13,8 +13,8 @@ import { AppRoutingModule } from './app.routing.module';
   ],
   imports: [
     BrowserModule,
-    AdminModule,
-    LoginModule,AppRoutingModule,   HttpClientModule
+    AppRoutingModule,  
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,30 +13,21 @@ titulos : string[] = [ '#','nombre','detalle','precio','cantidad' ]
 
   products : Product[] ;
 
-  constructor( private productservice:ProductoService ) { }
+  constructor(
+    private productService: ProductoService
+  ) { }
 
-  ngOnInit() 
-  {
-    this.products = this.productservice.getProduct();
+  ngOnInit() {
+    this.productService.getProducts()
+      .subscribe((products: Product[]) => {
+        this.products = products;
+      });
   }
 
-  retirar_producto( ide:number )
-  {   console.log('METODO INVOCADO ' + ide  );
-      const rpta =  this.productservice.eliminarProduct(ide);
-
-    if(rpta)
-    { console.log('RETIRADO ' + rpta  );
-
-    //this.products = this.productservice.getProduct().filter(product => product.id !== ide );
-
-    this.products = this.products.filter(product => product.id !== ide );
-
-    }
+  removeProduct(id: number) {
+    this.productService.deleteProduct(id).subscribe(() => {
+      this.products = this.products.filter(prod => prod.id !== id);
+    });
+  }
   
-
-
-  }
-
-
-
 }

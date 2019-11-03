@@ -1,7 +1,5 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
-import { SigninComponent } from './modules/login/signin/signin.component';
-import { ProductsComponent } from './modules/admin/products/products.component';
 import { ProductNewComponent } from './modules/admin/product-new/product-new.component';
 import { ProductEditComponent } from './modules/admin/product-edit/product-edit.component';
 
