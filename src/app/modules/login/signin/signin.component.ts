@@ -5,11 +5,23 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent implements OnInit 
+{
+model:any;
 
-  constructor() { }
+  constructor() 
+  { }
 
-  ngOnInit() {
+  ngOnInit() 
+  { 
+  this.model =  { email:'',
+                  password:'' }
   }
+
+onClick(e)
+{ e.preventDefault();
+  console.log( this.model ); 
+}
+
 
 }
